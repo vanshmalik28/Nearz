@@ -1,0 +1,322 @@
+# Nearz Website Revamp Prompt
+
+## Objective
+
+Redesign the **Nearz** website with a premium, modern, and conversion-focused UI/UX while keeping all existing content exactly the same. Do **not** change the website structure or text. The goal is to make the website visually engaging through animations, interactions, and polished design.
+
+---
+
+# Brand Guidelines
+
+### Brand Colors
+
+* Primary: Premium Orange (#FF6A00 or similar)
+* Secondary: White (#FFFFFF)
+* Accent: Soft gradients using orange shades
+* Text: Dark Charcoal (#1A1A1A)
+* Background: White with subtle orange glow effects
+
+The overall look should feel:
+
+* Modern
+* Premium
+* Minimal
+* Luxury Salon Marketplace
+* Clean
+* Fast
+* Commercial Quality
+
+---
+
+# Typography
+
+Use **one font family throughout the entire website** for consistency.
+
+Recommended fonts:
+
+* Plus Jakarta Sans (Preferred)
+* Alternatively: Manrope or Poppins
+
+Typography should be:
+
+* Bold headings
+* Medium-weight body text
+* Large spacing
+* High readability
+* Modern appearance
+
+Do not mix multiple font families.
+
+---
+
+# Header (Navigation)
+
+Top Left:
+
+* Nearz Logo (provided)
+* Nearz Name beside the logo
+
+Navigation Items:
+
+* The Problem
+* Growth Engine
+* Features
+* Why Nearz
+
+Top Right:
+
+* CTA Button (existing)
+* Sticky navigation while scrolling
+* Transparent header initially
+* Smooth transition into a white glassmorphism navbar after scrolling
+
+Animations:
+
+* Navigation links animate with underline on hover
+* Buttons have subtle lift and glow
+* Logo has a gentle floating animation
+
+---
+
+# Hero Section
+
+Keep the existing content.
+
+### Layout
+
+Left Side:
+
+* Existing heading
+* Existing description
+* Existing CTA buttons
+
+Right Side:
+
+* Replace the current illustration with the provided premium salon image.
+
+Image Animation:
+
+* Slow floating movement
+* Soft shadow
+* Zoom-in entrance
+* Parallax effect while scrolling
+* Light reflection effect
+* Rounded premium card with glass effect
+
+Background:
+
+* White base
+* Soft orange gradients
+* Floating blurred circles
+* Light particles
+* Abstract curved shapes
+
+Hero Entrance Animation:
+
+* Heading fades in from left
+* Paragraph appears after heading
+* Buttons slide upward
+* Image scales smoothly into view
+* Entire hero section should feel cinematic
+
+---
+
+# Scroll Animations (Entire Website)
+
+Every section should animate when entering the viewport.
+
+Use:
+
+* Fade Up
+* Fade Left
+* Fade Right
+* Scale In
+* Staggered animations
+* Parallax scrolling
+* Smooth reveal effects
+
+Scrolling should feel fluid and premium.
+
+---
+
+# The Problem Section
+
+Keep all content exactly the same.
+
+Enhancements:
+
+* Interactive cards
+* Orange accent icons
+* Cards lift slightly on hover
+* Subtle shadows
+* Background transitions
+* Scroll-triggered animations
+
+Cards should appear one after another with staggered motion.
+
+---
+
+# Growth Engine Section
+
+Keep content unchanged.
+
+Enhance using:
+
+* Animated process flow
+* Connecting lines that draw themselves
+* Icons appearing with scale animations
+* Hover effects
+* Soft glowing orange highlights
+* Smooth transitions
+
+Section should explain the workflow visually.
+
+---
+
+# Features Section (Major Redesign)
+
+This section should become the most interactive part of the website.
+
+Keep every feature exactly the same.
+
+### Feature Cards
+
+Design:
+
+* Rounded corners
+* Glassmorphism
+* White cards
+* Orange highlights
+* Soft shadows
+
+Animations:
+
+* Cards rise slightly on hover
+* Icon rotates gently
+* Gradient border animation
+* Glow effect
+* Mouse tilt interaction
+* Magnetic hover effect
+* Ripple click animation
+
+When scrolling:
+
+* Cards reveal one by one
+* Slight rotation while entering
+* Staggered timing
+* Smooth fade-up motion
+
+Icons:
+
+* Animated Lottie-style effects or motion graphics
+* Consistent visual style
+
+Micro-interactions:
+
+* Hover scaling
+* Smooth transitions
+* Floating particles around active cards
+
+---
+
+# Why Nearz Section
+
+Maintain the same content.
+
+Enhancements:
+
+* Split layout
+* Animated statistics
+* Counting numbers
+* Timeline reveal
+* Premium illustrations
+* Glass cards
+* Hover animations
+
+Include subtle orange glow behind key elements.
+
+---
+
+# Buttons
+
+All buttons should have:
+
+* Smooth hover transitions
+* Lift animation
+* Orange gradient
+* Ripple effect
+* Glow on hover
+* Scale interaction
+
+---
+
+# Background Effects
+
+Throughout the website:
+
+* Soft gradients
+* Floating abstract blobs
+* Light particles
+* Blurred orange circles
+* Premium white spacing
+
+Avoid visual clutter.
+
+---
+
+# Footer
+
+Modern redesign while keeping the same content.
+
+Include:
+
+* Hover animations
+* Social icon interactions
+* Smooth divider
+* Consistent spacing
+* Elegant typography
+
+---
+
+# Motion Design
+
+Use premium animations similar to high-end SaaS websites.
+
+Include:
+
+* Framer Motion animations
+* Smooth easing
+* Spring transitions
+* Scroll-triggered reveals
+* Staggered content loading
+* Floating elements
+* Magnetic buttons
+* Parallax scrolling
+* Glassmorphism
+* Gradient glow effects
+* Cursor-aware hover interactions
+* Smooth page transitions
+
+Animations should feel natural, responsive, and never distracting.
+
+---
+
+# Performance
+
+* Fully responsive across desktop, tablet, and mobile
+* Maintain 60 FPS animations
+* Lazy-load images
+* Optimize animation performance
+* Preserve accessibility and readability
+
+---
+
+# Important Instructions
+
+* Do **not** change any text or content.
+* Do **not** change the website structure.
+* Use the **provided Nearz logo** in the header.
+* Use the **provided salon image** in the hero section.
+* Maintain a consistent font family across the entire website.
+* Follow the Nearz orange-and-white brand identity throughout.
+* The final design should resemble a premium, modern SaaS landing page with elegant motion design, refined micro-interactions, and a luxury salon marketplace aesthetic.

@@ -20,11 +20,10 @@ import {
   Phone,
   Mail,
   Zap,
-  Mouse,
-  ChevronDown,
   Activity,
   BellRing,
-  Award
+  Award,
+  Scissors
 } from "lucide-react";
 
 // Stagger variants
@@ -69,18 +68,11 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto-cycle for mockup screens
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveScreen((prev) => (prev + 1) % 4);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const mockupScreens = [
     {
       title: "Dashboard",
       icon: <Activity className="w-5 h-5 text-primary" />,
+      desc: "Get a bird's-eye view of your salon's daily performance and upcoming appointments.",
       content: (
         <div className="space-y-4">
           <div className="flex gap-4">
@@ -108,8 +100,35 @@ export default function Home() {
       )
     },
     {
-      title: "Customer Engagement",
-      icon: <MessageCircle className="w-5 h-5 text-primary" />,
+      title: "Bookings",
+      icon: <Calendar className="w-5 h-5 text-primary" />,
+      desc: "Manage your calendar, assign staff, and never double-book a slot again.",
+      content: (
+        <div className="space-y-3">
+          {[
+            { time: "10:00 AM", service: "Haircut & Styling", customer: "Rahul S." },
+            { time: "11:30 AM", service: "Facial", customer: "Priya M." },
+            { time: "01:00 PM", service: "Hair Spa", customer: "Anjali K." }
+          ].map((booking, i) => (
+            <motion.div 
+              key={i}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: i * 0.15 }}
+              className="p-3 bg-muted/30 rounded-xl border border-border/50"
+            >
+              <div className="text-xs font-bold text-primary mb-1">{booking.time}</div>
+              <div className="font-medium">{booking.service}</div>
+              <div className="text-sm text-muted-foreground">{booking.customer}</div>
+            </motion.div>
+          ))}
+        </div>
+      )
+    },
+    {
+      title: "Customer Mgmt",
+      icon: <Users className="w-5 h-5 text-primary" />,
+      desc: "Rich profiles with visit history, preferences, and automated follow-ups.",
       content: (
         <div className="space-y-3">
           {[1, 2, 3].map((_, i) => (
@@ -127,17 +146,38 @@ export default function Home() {
                 <div className="h-2 w-20 bg-foreground/20 rounded mb-2"></div>
                 <div className="h-1.5 w-32 bg-muted-foreground/20 rounded"></div>
               </div>
-              <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                <CheckCircle2 className="w-3 h-3 text-green-600" />
-              </div>
             </motion.div>
           ))}
         </div>
       )
     },
     {
-      title: "Loyalty & Rewards",
+      title: "Analytics",
+      icon: <BarChart className="w-5 h-5 text-primary" />,
+      desc: "Deep insights into retention rates, staff performance, and top services.",
+      content: (
+        <div className="space-y-4">
+          <div className="p-4 bg-muted/30 rounded-xl border border-border/50">
+            <div className="text-sm font-medium mb-3">Customer Retention</div>
+            <div className="flex items-end h-24 gap-2">
+              {[30, 50, 40, 60, 55, 80].map((h, i) => (
+                <motion.div 
+                  key={i}
+                  className="flex-1 bg-orange-400 rounded-t-sm"
+                  initial={{ height: 0 }}
+                  animate={{ height: `${h}%` }}
+                  transition={{ delay: i * 0.1 }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Loyalty Program",
       icon: <Award className="w-5 h-5 text-primary" />,
+      desc: "Automated tiers and rewards that incentivize your best customers to return.",
       content: (
         <div className="flex flex-col items-center justify-center py-6 text-center space-y-4">
           <motion.div 
@@ -156,8 +196,34 @@ export default function Home() {
       )
     },
     {
-      title: "Smart Reminders",
-      icon: <BellRing className="w-5 h-5 text-primary" />,
+      title: "Reviews",
+      icon: <Star className="w-5 h-5 text-primary" />,
+      desc: "Automatically request Google reviews from happy customers after checkout.",
+      content: (
+        <div className="space-y-3">
+          {[5, 5, 4].map((rating, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              className="p-3 bg-muted/30 rounded-xl border border-border/50"
+            >
+              <div className="flex gap-1 mb-2">
+                {[1, 2, 3, 4, 5].map(star => (
+                  <Star key={star} className={`w-3 h-3 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-muted'}`} />
+                ))}
+              </div>
+              <div className="text-sm font-medium">"Amazing service, highly recommended!"</div>
+            </motion.div>
+          ))}
+        </div>
+      )
+    },
+    {
+      title: "Promotions",
+      icon: <Gift className="w-5 h-5 text-primary" />,
+      desc: "Targeted SMS and WhatsApp campaigns that fill your empty slots.",
       content: (
         <div className="space-y-4">
           <div className="p-4 bg-primary/5 rounded-xl border border-primary/20 relative overflow-hidden">
@@ -185,6 +251,14 @@ export default function Home() {
       )
     }
   ];
+
+  // Auto-cycle for mockup screens
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveScreen((prev) => (prev + 1) % mockupScreens.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [mockupScreens.length]);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/20 selection:text-primary">
@@ -233,25 +307,25 @@ export default function Home() {
 
       <main>
         {/* 2. Hero */}
-        <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-4 relative min-h-[90vh] flex items-center">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 relative min-h-[90vh] flex items-center">
           <div className="container mx-auto max-w-6xl relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="flex-1 text-center lg:text-left"
               >
-                <Badge variant="outline" className="mb-8 border-primary/20 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-semibold text-sm backdrop-blur-sm">
+                <Badge variant="outline" className="mb-6 border-primary/20 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-semibold text-sm backdrop-blur-sm">
                   <Zap className="w-4 h-4 mr-2 inline" />
                   A Growth Platform For Modern Salons
                 </Badge>
                 
-                <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15] mb-6 max-w-[15ch] mx-auto lg:mx-0">
                   Turn One-Time Salon Visitors Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Loyal Repeat Customers.</span>
                 </h1>
                 
-                <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   Most salons lose 80% of first-time customers. Nearz for Business combines operations, CRM and automated engagement so every visit compounds into recurring revenue.
                 </p>
                 
@@ -279,7 +353,7 @@ export default function Home() {
 
               <motion.div 
                 style={{ y: heroY }}
-                className="flex-1 relative w-full max-w-lg lg:max-w-none mx-auto lg:-mt-12"
+                className="flex-1 relative w-full max-w-lg lg:max-w-none mx-auto lg:-mt-20"
               >
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
@@ -295,7 +369,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6, type: "spring" }}
-                  className="absolute -left-12 lg:-left-20 top-1/4 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
+                  className="absolute -left-6 lg:-left-24 top-10 lg:top-1/4 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
                 >
                   <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 border border-green-500/20">
                     <CheckCircle2 className="w-6 h-6" />
@@ -310,7 +384,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8, type: "spring" }}
-                  className="absolute -right-8 lg:-right-16 bottom-1/3 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
+                  className="absolute -right-6 lg:-right-24 bottom-16 lg:bottom-1/4 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
                 >
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
                     <TrendingUp className="w-6 h-6" />
@@ -453,7 +527,7 @@ export default function Home() {
                   className="w-full bg-primary"
                   initial={{ height: "0%" }}
                   whileInView={{ height: "100%" }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 2, ease: "easeInOut" }}
                 />
               </div>
@@ -467,7 +541,7 @@ export default function Home() {
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: false, margin: "-50px" }}
                   transition={{ delay: i * 0.2 }}
                   key={i} 
                   className="relative flex flex-col md:flex-row gap-6 md:gap-12 bg-card border border-border shadow-sm p-8 rounded-3xl hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
@@ -505,18 +579,13 @@ export default function Home() {
 
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               {/* Feature List */}
-              <div className="lg:col-span-5 space-y-4 order-2 lg:order-1">
-                {[
-                  { num: "01", title: "Manage Operations", icon: <Calendar className="w-6 h-6" />, desc: "Billing, appointments, packages, and staff — all in one place." },
-                  { num: "02", title: "Engage Customers", icon: <MessageCircle className="w-6 h-6" />, desc: "Automated WhatsApp & SMS campaigns that reach customers perfectly." },
-                  { num: "03", title: "Drive Repeat Visits", icon: <ArrowRight className="w-6 h-6" />, desc: "Smart reminders and personalized offers that bring customers back." },
-                  { num: "04", title: "Increase Lifetime Value", icon: <TrendingUp className="w-6 h-6" />, desc: "Every repeat visit and referral adds up. Maximize customer worth." }
-                ].map((pillar, i) => (
+              <div className="lg:col-span-6 space-y-4 order-2 lg:order-1 h-[600px] overflow-y-auto pr-4 scrollbar-hide">
+                {mockupScreens.map((screen, i) => (
                   <div 
                     key={i} 
                     className={`p-6 rounded-2xl border transition-all duration-500 cursor-pointer ${
                       activeScreen === i 
-                        ? "bg-white shadow-lg border-primary/20 scale-105" 
+                        ? "bg-white shadow-lg border-primary/20 scale-[1.02]" 
                         : "bg-transparent border-transparent hover:bg-white/50 opacity-60 hover:opacity-100"
                     }`}
                     onClick={() => setActiveScreen(i)}
@@ -525,9 +594,9 @@ export default function Home() {
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
                         activeScreen === i ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"
                       }`}>
-                        {pillar.icon}
+                        {screen.icon}
                       </div>
-                      <h3 className="text-xl font-bold">{pillar.title}</h3>
+                      <h3 className="text-xl font-bold">{screen.title}</h3>
                     </div>
                     <AnimatePresence>
                       {activeScreen === i && (
@@ -537,7 +606,7 @@ export default function Home() {
                           exit={{ height: 0, opacity: 0 }}
                           className="text-muted-foreground font-medium pl-14 leading-relaxed"
                         >
-                          {pillar.desc}
+                          {screen.desc}
                         </motion.p>
                       )}
                     </AnimatePresence>
@@ -546,12 +615,12 @@ export default function Home() {
               </div>
 
               {/* Device Mockup */}
-              <div className="lg:col-span-7 order-1 lg:order-2 relative">
+              <div className="lg:col-span-6 order-1 lg:order-2 relative">
                 <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
                 <motion.div 
                   animate={{ y: [0, -15, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative mx-auto max-w-[320px] aspect-[1/2] rounded-[3rem] border-[12px] border-foreground bg-background shadow-2xl shadow-primary/20 overflow-hidden"
+                  className="relative mx-auto max-w-[320px] aspect-[1/2] rounded-[3rem] border-[12px] border-foreground bg-background shadow-[0_0_50px_rgba(255,106,0,0.25)] overflow-hidden"
                 >
                   {/* Phone Notch */}
                   <div className="absolute top-0 inset-x-0 h-6 bg-foreground rounded-b-3xl w-1/2 mx-auto z-50"></div>
@@ -573,6 +642,7 @@ export default function Home() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
                         className="flex items-center gap-2 font-semibold text-lg"
                       >
                         {mockupScreens[activeScreen].icon}
@@ -582,7 +652,7 @@ export default function Home() {
                   </div>
 
                   {/* App Content Area */}
-                  <div className="p-6 h-full overflow-y-auto bg-muted/20">
+                  <div className="p-6 h-full overflow-y-auto bg-muted/20 pb-32">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={activeScreen}
@@ -735,7 +805,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 9. Full Toolkit */}
+        {/* 9. Full Toolkit (Bento Grid) */}
         <section className="py-32 bg-muted/30">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-20">
@@ -743,18 +813,18 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-extrabold mt-4">Everything Needed To Run A Modern Salon.</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[220px]">
               {[
-                { name: "Billing", desc: "Fast, accurate invoicing at the point of sale", icon: <Zap className="w-6 h-6" /> },
-                { name: "CRM", desc: "Rich customer profiles that power retention", icon: <Users className="w-6 h-6" /> },
-                { name: "Appointments", desc: "Seamless booking and schedule management", icon: <Calendar className="w-6 h-6" /> },
-                { name: "Packages", desc: "Pre-paid service bundles to lock in revenue", icon: <Gift className="w-6 h-6" /> },
-                { name: "Loyalty", desc: "Points, rewards, and tiers that keep customers coming back", icon: <Star className="w-6 h-6" /> },
-                { name: "Marketing", desc: "WhatsApp, SMS, and email campaigns on autopilot", icon: <MessageCircle className="w-6 h-6" /> },
-                { name: "Feedback", desc: "Post-visit surveys to improve service quality", icon: <MessageCircle className="w-6 h-6" /> },
-                { name: "Reviews", desc: "Automated Google review collection at scale", icon: <Star className="w-6 h-6" /> },
-                { name: "Reports", desc: "Actionable insights into revenue and retention", icon: <BarChart className="w-6 h-6" /> },
-                { name: "Mobile App", desc: "Run your salon from anywhere, anytime", icon: <Smartphone className="w-6 h-6" /> }
+                { name: "Billing", desc: "Fast, accurate invoicing at the point of sale", icon: <Zap className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-1 row-span-1" },
+                { name: "CRM", desc: "Rich customer profiles that power retention", icon: <Users className="w-8 h-8" />, span: "col-span-1 row-span-2" },
+                { name: "Appointments", desc: "Seamless booking and schedule management", icon: <Calendar className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 row-span-1 lg:col-span-1 lg:row-span-1" },
+                { name: "Packages", desc: "Pre-paid service bundles to lock in revenue", icon: <Gift className="w-8 h-8" />, span: "col-span-1 row-span-1" },
+                { name: "Loyalty", desc: "Points, rewards, and tiers that keep customers coming back", icon: <Star className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 row-span-1" },
+                { name: "Marketing", desc: "WhatsApp, SMS, and email campaigns on autopilot", icon: <MessageCircle className="w-8 h-8" />, span: "col-span-1 lg:col-span-2 row-span-1" },
+                { name: "Feedback", desc: "Post-visit surveys to improve service quality", icon: <Scissors className="w-8 h-8" />, span: "col-span-1 row-span-1" },
+                { name: "Reviews", desc: "Automated Google review collection at scale", icon: <Star className="w-8 h-8" />, span: "col-span-1 row-span-1" },
+                { name: "Reports", desc: "Actionable insights into revenue and retention", icon: <BarChart className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-1 row-span-2" },
+                { name: "Mobile App", desc: "Run your salon from anywhere, anytime", icon: <Smartphone className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-2 row-span-1" }
               ].map((tool, i) => (
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -762,15 +832,18 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   key={i} 
-                  className="p-8 rounded-[2rem] bg-background border border-border/50 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
+                  className={`relative p-8 rounded-3xl overflow-hidden group ${tool.span} bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 flex flex-col`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-muted/50 text-muted-foreground flex items-center justify-center mb-6 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center mb-auto shadow-sm border border-border/50 group-hover:from-primary/20 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300 group-hover:scale-110 z-10">
                     {tool.icon}
                   </div>
-                  <h3 className="font-bold text-xl mb-3 text-foreground">
-                    {tool.name}
-                  </h3>
-                  <p className="text-muted-foreground font-medium leading-relaxed mt-auto">{tool.desc}</p>
+                  <div className="relative z-10 mt-6">
+                    <h3 className="font-extrabold text-2xl mb-2 text-foreground group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>

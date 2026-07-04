@@ -1,0 +1,104 @@
+# Nearz for Business – UI/UX Revision Prompt (Final Improvements)
+
+Keep the **orange and white brand identity**, **existing content**, and **overall website structure** the same. The objective is to make the website feel more premium, interactive, and visually engaging without changing the core messaging.
+
+## 1. Hero Section Text Layout
+
+The following content should fit naturally within the hero section without wrapping excessively:
+
+**Heading**
+
+> Turn One-Time Salon Visitors Into Loyal Repeat Customers.
+
+**Description**
+
+> Most salons lose 80% of first-time customers. Nearz for Business combines operations, CRM, and automated engagement so every visit compounds into recurring revenue.
+
+Requirements:
+
+* Reduce the heading and paragraph font size slightly so the entire content fits comfortably in the hero section.
+* The heading should ideally display in **2–3 balanced lines**, not break into too many lines.
+* Improve line spacing and text alignment for a cleaner, more premium appearance.
+* Maintain a strong visual hierarchy while keeping the hero section uncluttered.
+
+---
+
+## 2. Hero Image Positioning
+
+* Move the salon image **slightly upward** (approximately 80–100px) to improve the composition.
+* Reposition the floating glass cards so they **do not cover the salon image**.
+
+Specifically:
+
+* **Appointment Booked – Returning Customer** should sit beside the image rather than overlapping it.
+* **Loyalty Tier Upgraded – Gold Member** should also be positioned outside the main subject of the image.
+* Both floating cards should still feel connected to the image with subtle floating animations and shadows.
+
+---
+
+## 3. "The Salon Growth Engine" Animation
+
+This section should feel alive every time the user reaches it.
+
+Requirements:
+
+* Every time this section enters the viewport, replay the complete animation sequence.
+* Each step should appear **one by one** in order.
+* Connecting lines/arrows should animate as they draw between each step.
+* Use staggered timing with smooth easing.
+* Icons should fade and scale into view.
+* The animation should replay **every time the visitor scrolls back to this section**, not just on the first page load.
+* Keep the animation smooth, premium, and lightweight.
+
+---
+
+## 4. "Meet Nearz for Business" Section
+
+Keep the layout, but make the phone mockup feel like a live product demo.
+
+Requirements:
+
+* Display actual screenshots of the Nearz application inside the phone.
+* Cycle through multiple feature screens automatically every **2 seconds**.
+* Include screens such as:
+
+  * Dashboard
+  * Bookings
+  * Customer Management
+  * Analytics
+  * Loyalty Program
+  * Reviews
+  * Promotions
+* Use smooth fade, slide, or swipe transitions.
+* Synchronize the highlighted feature description with the currently displayed phone screen.
+* Add subtle glow and floating effects around the phone to draw attention.
+
+---
+
+## 5. "Everything Needed To Run A Modern Salon" Section
+
+The current section feels too plain.
+
+Keep all the existing feature information, but redesign the presentation to make it much more engaging.
+
+Suggestions:
+
+* Replace the static layout with modern feature cards.
+* Use premium icons or illustrations.
+* Add hover animations and subtle micro-interactions.
+* Introduce alternating layouts or a bento-style grid.
+* Include soft orange gradients and glassmorphism effects.
+* Add staggered scroll animations for each feature card.
+* Use better spacing, depth, and visual hierarchy.
+* Make this section feel interactive and premium while preserving the same text and functionality.
+
+---
+
+## Overall Quality Improvements
+
+* Maintain one consistent font family across the website.
+* Keep the orange-and-white color palette unchanged.
+* Improve spacing and alignment throughout the site.
+* Add smooth page transitions and refined micro-interactions.
+* Ensure animations remain fluid (60 FPS) and responsive across desktop, tablet, and mobile.
+* The final result should resemble a premium SaaS landing page with elegant motion design, polished interactions, and a luxury, high-end aesthetic while keeping all existing branding and content intact.

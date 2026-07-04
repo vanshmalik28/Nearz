@@ -1,0 +1,49 @@
+# Nearz for Business – Additional UI/UX Revision Instructions
+
+Keep the existing **orange and white branding**, **content**, and **overall design language** unchanged. Only implement the following improvements.
+
+## 1. "Meet Nearz for Business" Section
+
+Currently, this section only contains the four feature points:
+
+* Manage Operations
+* Engage Customers
+* Drive Repeat Visits
+* Increase Lifetime Value
+
+Enhance this section without changing these four feature titles.
+
+### Requirements:
+
+* Keep the four feature points exactly as they are.
+* Add a premium mobile phone mockup beside the feature list.
+* Display actual Nearz application screens inside the phone.
+* Automatically switch between different app screens every **2 seconds** using smooth fade or swipe animations.
+* Each feature should correspond to a relevant screen:
+
+  * **Manage Operations** → Dashboard / Appointment Management
+  * **Engage Customers** → CRM / Customer Profiles
+  * **Drive Repeat Visits** → Loyalty & Offers
+  * **Increase Lifetime Value** → Analytics / Revenue Dashboard
+* When the phone screen changes, highlight the corresponding feature with a subtle orange glow and smooth transition.
+* Add soft floating animation and ambient glow around the phone to make the section feel interactive and premium.
+
+---
+
+## 2. "Everything Needed To Run A Modern Salon" Section
+
+This section needs only two improvements.
+
+### Reduce the Heading Size
+
+* Decrease the font size of **"Everything Needed To Run A Modern Salon"** slightly so it looks cleaner and better balanced with the rest of the page.
+* Maintain the same font family, weight, and color.
+
+### Restore the Original Feature Layout
+
+* Revert the feature arrangement to the **original layout** used previously.
+* Keep the improved animations, hover effects, spacing, and visual polish.
+* Do **not** use the new arrangement introduced in the last revision.
+* Preserve all feature content exactly as it is; only restore the previous layout while maintaining the enhanced UI quality.
+
+The final result should combine the familiarity of the original feature arrangement with modern animations, elegant transitions, and a premium visual experience.

@@ -70,9 +70,9 @@ export default function Home() {
 
   const mockupScreens = [
     {
-      title: "Dashboard",
+      title: "Manage Operations",
       icon: <Activity className="w-5 h-5 text-primary" />,
-      desc: "Get a bird's-eye view of your salon's daily performance and upcoming appointments.",
+      desc: "Streamline your daily workflow with intuitive appointment booking, staff scheduling, and point-of-sale billing.",
       content: (
         <div className="space-y-4">
           <div className="flex gap-4">
@@ -100,35 +100,9 @@ export default function Home() {
       )
     },
     {
-      title: "Bookings",
-      icon: <Calendar className="w-5 h-5 text-primary" />,
-      desc: "Manage your calendar, assign staff, and never double-book a slot again.",
-      content: (
-        <div className="space-y-3">
-          {[
-            { time: "10:00 AM", service: "Haircut & Styling", customer: "Rahul S." },
-            { time: "11:30 AM", service: "Facial", customer: "Priya M." },
-            { time: "01:00 PM", service: "Hair Spa", customer: "Anjali K." }
-          ].map((booking, i) => (
-            <motion.div 
-              key={i}
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: i * 0.15 }}
-              className="p-3 bg-muted/30 rounded-xl border border-border/50"
-            >
-              <div className="text-xs font-bold text-primary mb-1">{booking.time}</div>
-              <div className="font-medium">{booking.service}</div>
-              <div className="text-sm text-muted-foreground">{booking.customer}</div>
-            </motion.div>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: "Customer Mgmt",
+      title: "Engage Customers",
       icon: <Users className="w-5 h-5 text-primary" />,
-      desc: "Rich profiles with visit history, preferences, and automated follow-ups.",
+      desc: "Build rich customer profiles with visit history, preferences, and automated follow-ups to strengthen relationships.",
       content: (
         <div className="space-y-3">
           {[1, 2, 3].map((_, i) => (
@@ -152,32 +126,9 @@ export default function Home() {
       )
     },
     {
-      title: "Analytics",
-      icon: <BarChart className="w-5 h-5 text-primary" />,
-      desc: "Deep insights into retention rates, staff performance, and top services.",
-      content: (
-        <div className="space-y-4">
-          <div className="p-4 bg-muted/30 rounded-xl border border-border/50">
-            <div className="text-sm font-medium mb-3">Customer Retention</div>
-            <div className="flex items-end h-24 gap-2">
-              {[30, 50, 40, 60, 55, 80].map((h, i) => (
-                <motion.div 
-                  key={i}
-                  className="flex-1 bg-orange-400 rounded-t-sm"
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ delay: i * 0.1 }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "Loyalty Program",
-      icon: <Award className="w-5 h-5 text-primary" />,
-      desc: "Automated tiers and rewards that incentivize your best customers to return.",
+      title: "Drive Repeat Visits",
+      icon: <Gift className="w-5 h-5 text-primary" />,
+      desc: "Bring customers back with targeted SMS campaigns, automated reminders, and custom loyalty tiers.",
       content: (
         <div className="flex flex-col items-center justify-center py-6 text-center space-y-4">
           <motion.div 
@@ -196,55 +147,23 @@ export default function Home() {
       )
     },
     {
-      title: "Reviews",
-      icon: <Star className="w-5 h-5 text-primary" />,
-      desc: "Automatically request Google reviews from happy customers after checkout.",
-      content: (
-        <div className="space-y-3">
-          {[5, 5, 4].map((rating, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              className="p-3 bg-muted/30 rounded-xl border border-border/50"
-            >
-              <div className="flex gap-1 mb-2">
-                {[1, 2, 3, 4, 5].map(star => (
-                  <Star key={star} className={`w-3 h-3 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-muted'}`} />
-                ))}
-              </div>
-              <div className="text-sm font-medium">"Amazing service, highly recommended!"</div>
-            </motion.div>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: "Promotions",
-      icon: <Gift className="w-5 h-5 text-primary" />,
-      desc: "Targeted SMS and WhatsApp campaigns that fill your empty slots.",
+      title: "Increase Lifetime Value",
+      icon: <BarChart className="w-5 h-5 text-primary" />,
+      desc: "Unlock deep insights into retention rates, staff performance, and revenue opportunities to scale your business.",
       content: (
         <div className="space-y-4">
-          <div className="p-4 bg-primary/5 rounded-xl border border-primary/20 relative overflow-hidden">
-            <motion.div 
-              animate={{ x: ["-100%", "200%"] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"
-            />
-            <div className="flex justify-between items-start mb-2">
-              <Badge variant="outline" className="bg-white text-xs">Overdue</Badge>
-              <span className="text-xs text-muted-foreground">2 days ago</span>
-            </div>
-            <div className="font-medium mb-1">Sarah's Haircut due</div>
-            <div className="text-sm text-muted-foreground mb-3">Last visit 45 days ago. Auto-sending 15% off voucher.</div>
-            <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-              <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 2 }}
-                className="h-full bg-primary"
-              />
+          <div className="p-4 bg-muted/30 rounded-xl border border-border/50">
+            <div className="text-sm font-medium mb-3">Customer Retention</div>
+            <div className="flex items-end h-24 gap-2">
+              {[30, 50, 40, 60, 55, 80].map((h, i) => (
+                <motion.div 
+                  key={i}
+                  className="flex-1 bg-orange-400 rounded-t-sm"
+                  initial={{ height: 0 }}
+                  animate={{ height: `${h}%` }}
+                  transition={{ delay: i * 0.1 }}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -579,13 +498,13 @@ export default function Home() {
 
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               {/* Feature List */}
-              <div className="lg:col-span-6 space-y-4 order-2 lg:order-1 h-[600px] overflow-y-auto pr-4 scrollbar-hide">
+              <div className="lg:col-span-6 space-y-4 order-2 lg:order-1 pr-4">
                 {mockupScreens.map((screen, i) => (
                   <div 
                     key={i} 
                     className={`p-6 rounded-2xl border transition-all duration-500 cursor-pointer ${
                       activeScreen === i 
-                        ? "bg-white shadow-lg border-primary/20 scale-[1.02]" 
+                        ? "bg-orange-50/80 dark:bg-primary/10 shadow-[0_0_30px_rgba(255,106,0,0.15)] border-primary/30 scale-[1.02]" 
                         : "bg-transparent border-transparent hover:bg-white/50 opacity-60 hover:opacity-100"
                     }`}
                     onClick={() => setActiveScreen(i)}
@@ -616,7 +535,11 @@ export default function Home() {
 
               {/* Device Mockup */}
               <div className="lg:col-span-6 order-1 lg:order-2 relative">
-                <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
+                <motion.div 
+                  animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.4, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-primary/30 blur-[120px] rounded-full" 
+                />
                 <motion.div 
                   animate={{ y: [0, -15, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -810,21 +733,21 @@ export default function Home() {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-20">
               <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs">The full toolkit</span>
-              <h2 className="text-4xl md:text-6xl font-extrabold mt-4">Everything Needed To Run A Modern Salon.</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold mt-4">Everything Needed To Run A Modern Salon.</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[220px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { name: "Billing", desc: "Fast, accurate invoicing at the point of sale", icon: <Zap className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-1 row-span-1" },
-                { name: "CRM", desc: "Rich customer profiles that power retention", icon: <Users className="w-8 h-8" />, span: "col-span-1 row-span-2" },
-                { name: "Appointments", desc: "Seamless booking and schedule management", icon: <Calendar className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 row-span-1 lg:col-span-1 lg:row-span-1" },
-                { name: "Packages", desc: "Pre-paid service bundles to lock in revenue", icon: <Gift className="w-8 h-8" />, span: "col-span-1 row-span-1" },
-                { name: "Loyalty", desc: "Points, rewards, and tiers that keep customers coming back", icon: <Star className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 row-span-1" },
-                { name: "Marketing", desc: "WhatsApp, SMS, and email campaigns on autopilot", icon: <MessageCircle className="w-8 h-8" />, span: "col-span-1 lg:col-span-2 row-span-1" },
-                { name: "Feedback", desc: "Post-visit surveys to improve service quality", icon: <Scissors className="w-8 h-8" />, span: "col-span-1 row-span-1" },
-                { name: "Reviews", desc: "Automated Google review collection at scale", icon: <Star className="w-8 h-8" />, span: "col-span-1 row-span-1" },
-                { name: "Reports", desc: "Actionable insights into revenue and retention", icon: <BarChart className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-1 row-span-2" },
-                { name: "Mobile App", desc: "Run your salon from anywhere, anytime", icon: <Smartphone className="w-8 h-8" />, span: "col-span-1 sm:col-span-2 lg:col-span-2 row-span-1" }
+                { name: "Billing", desc: "Fast, accurate invoicing at the point of sale", icon: <Zap className="w-6 h-6" /> },
+                { name: "CRM", desc: "Rich customer profiles that power retention", icon: <Users className="w-6 h-6" /> },
+                { name: "Appointments", desc: "Seamless booking and schedule management", icon: <Calendar className="w-6 h-6" /> },
+                { name: "Packages", desc: "Pre-paid service bundles to lock in revenue", icon: <Gift className="w-6 h-6" /> },
+                { name: "Loyalty", desc: "Points, rewards, and tiers that keep customers coming back", icon: <Star className="w-6 h-6" /> },
+                { name: "Marketing", desc: "WhatsApp, SMS, and email campaigns on autopilot", icon: <MessageCircle className="w-6 h-6" /> },
+                { name: "Feedback", desc: "Post-visit surveys to improve service quality", icon: <Scissors className="w-6 h-6" /> },
+                { name: "Reviews", desc: "Automated Google review collection at scale", icon: <Star className="w-6 h-6" /> },
+                { name: "Reports", desc: "Actionable insights into revenue and retention", icon: <BarChart className="w-6 h-6" /> },
+                { name: "Mobile App", desc: "Run your salon from anywhere, anytime", icon: <Smartphone className="w-6 h-6" /> }
               ].map((tool, i) => (
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -832,17 +755,24 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   key={i} 
-                  className={`relative p-8 rounded-3xl overflow-hidden group ${tool.span} bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 flex flex-col`}
+                  className="relative p-6 rounded-3xl overflow-hidden group bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 flex flex-col"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center mb-auto shadow-sm border border-border/50 group-hover:from-primary/20 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300 group-hover:scale-110 z-10">
-                    {tool.icon}
+                  
+                  <div className="flex justify-between items-start mb-4 relative z-10">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center shadow-sm border border-border/50 group-hover:from-primary/20 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300 group-hover:scale-110">
+                      {tool.icon}
+                    </div>
+                    <div className="text-2xl font-extrabold text-muted-foreground/30 font-serif group-hover:text-primary/30 transition-colors">
+                      {(i + 1).toString().padStart(2, '0')}
+                    </div>
                   </div>
-                  <div className="relative z-10 mt-6">
-                    <h3 className="font-extrabold text-2xl mb-2 text-foreground group-hover:text-primary transition-colors">
+                  
+                  <div className="relative z-10 mt-2 flex-1">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
                       {tool.name}
                     </h3>
-                    <p className="text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
+                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
                   </div>
                 </motion.div>
               ))}

@@ -1,0 +1,88 @@
+# Nearz for Business – Mobile Responsive Improvements
+
+**Important:** Do **not** modify the desktop version in any way. All existing desktop layouts, animations, spacing, and functionality should remain exactly as they are. Apply the following changes **only to the mobile version** of the website.
+
+---
+
+## 1. Mobile Hero Section
+
+The hero section needs better spacing and responsiveness.
+
+### Requirements:
+
+* Reposition the salon image so it displays properly on smaller screens.
+* The two floating glass cards:
+
+  * **Appointment Booked – Returning Customer**
+  * **Loyalty Tier Upgraded – Gold Member**
+
+  currently cover most of the image on mobile.
+
+Fix this by:
+
+* Moving the cards outside the main subject of the image.
+* Reducing their size slightly on mobile.
+* Positioning them so they frame the image instead of hiding it.
+* Ensure the image remains the primary focus while still preserving the floating card effect.
+
+---
+
+## 2. Clear Separation Between First & Second Sections
+
+The transition between the Hero section and the second section feels abrupt.
+
+Improve it by adding a premium scroll indicator.
+
+Requirements:
+
+* Add an animated **"Scroll Down"** indicator at the bottom of the Hero section.
+* Include a subtle bouncing arrow or mouse-scroll animation.
+* When the user begins scrolling, the indicator should fade away smoothly.
+* Add slightly more spacing between the Hero and the second section so the transition feels more natural.
+
+---
+
+## 3. Mobile Features Section Redesign
+
+The current Features section becomes excessively long on mobile.
+
+Instead of stacking every feature vertically:
+
+* Arrange **5 feature cards in the first horizontal row**.
+* Arrange the **remaining 5 feature cards in a second horizontal row**.
+* Each row should continuously move in an infinite loop (marquee/carousel style).
+* The first row should scroll from **left to right**.
+* The second row should scroll from **right to left**.
+* Pause the animation while the user is interacting with a card.
+* Cards should maintain the existing hover/animation style where applicable.
+* Ensure smooth, seamless looping with no visible jump or reset.
+
+This layout should reduce scrolling while making the Features section more engaging and dynamic.
+
+---
+
+## 4. Mobile Header
+
+Simplify the navigation bar on mobile.
+
+Requirements:
+
+* Remove the **"Book Consultation"** button from the mobile header.
+* Keep the Nearz for Business logo and menu icon.
+* Preserve the desktop header exactly as it is.
+* The desktop version should remain unchanged.
+
+---
+
+## 5. Mobile Experience
+
+Without affecting the desktop version:
+
+* Improve spacing and padding for small screens.
+* Maintain consistent typography.
+* Ensure all animations remain smooth and responsive.
+* Optimize touch targets for buttons and cards.
+* Eliminate any overlapping or clipping issues.
+* Ensure every section feels polished, balanced, and easy to navigate on mobile devices.
+
+The mobile experience should feel like a professionally designed native application while preserving the premium orange-and-white branding and leaving the desktop version completely untouched.

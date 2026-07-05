@@ -217,16 +217,13 @@ export default function Home() {
             <Button onClick={scrollToCta} className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 transition-all hover:shadow-[0_0_20px_rgba(255,106,0,0.3)] hover:-translate-y-0.5 active:translate-y-0">
               Book Free Growth Consultation
             </Button>
-            <Button onClick={scrollToCta} size="sm" className="md:hidden bg-primary text-primary-foreground rounded-full font-semibold">
-              Book Consultation
-            </Button>
           </div>
         </div>
       </header>
 
       <main>
         {/* 2. Hero */}
-        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 relative min-h-[90vh] flex items-center">
+        <section className="pt-32 pb-24 md:pt-40 md:pb-24 px-4 relative min-h-[90vh] flex items-center mb-8 md:mb-0">
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <motion.div 
@@ -288,14 +285,14 @@ export default function Home() {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6, type: "spring" }}
-                  className="absolute -left-6 lg:-left-24 top-10 lg:top-1/4 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
+                  className="absolute -left-4 sm:-left-6 lg:-left-24 top-0 sm:top-10 lg:top-1/4 bg-background/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-xl shadow-black/5 p-2.5 sm:p-4 border border-border/50 flex items-center gap-3 z-20 scale-[0.85] sm:scale-100 origin-top-left max-w-[200px] sm:max-w-none"
                 >
-                  <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 border border-green-500/20">
-                    <CheckCircle2 className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 border border-green-500/20 shrink-0">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-foreground">Appointment Booked</div>
-                    <div className="text-xs font-medium text-muted-foreground mt-0.5">Returning Customer</div>
+                    <div className="text-[13px] sm:text-sm font-bold text-foreground leading-tight">Appointment Booked</div>
+                    <div className="text-[10px] sm:text-xs font-medium text-muted-foreground mt-0.5 leading-tight">Returning Customer</div>
                   </div>
                 </motion.div>
                 
@@ -303,14 +300,14 @@ export default function Home() {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8, type: "spring" }}
-                  className="absolute -right-6 lg:-right-24 bottom-16 lg:bottom-1/4 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/5 p-4 border border-border/50 flex items-center gap-4 z-20"
+                  className="absolute -right-4 sm:-right-6 lg:-right-24 bottom-4 sm:bottom-16 lg:bottom-1/4 bg-background/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-xl shadow-black/5 p-2.5 sm:p-4 border border-border/50 flex items-center gap-3 z-20 scale-[0.85] sm:scale-100 origin-bottom-right max-w-[200px] sm:max-w-none"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
-                    <TrendingUp className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shrink-0">
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-foreground">Loyalty Tier Upgraded</div>
-                    <div className="text-xs font-medium text-muted-foreground mt-0.5">Gold Member</div>
+                    <div className="text-[13px] sm:text-sm font-bold text-foreground leading-tight">Loyalty Tier Upgraded</div>
+                    <div className="text-[10px] sm:text-xs font-medium text-muted-foreground mt-0.5 leading-tight">Gold Member</div>
                   </div>
                 </motion.div>
               </motion.div>
@@ -320,21 +317,21 @@ export default function Home() {
           {/* Scroll Indicator */}
           <motion.div 
             style={{ opacity: heroOpacity }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+            className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
           >
-            <span className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">Scroll Down</span>
+            <span className="text-[10px] md:text-xs font-semibold text-muted-foreground tracking-widest uppercase">Scroll Down</span>
             <motion.div 
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-8 h-12 rounded-full border-2 border-border/60 flex justify-center pt-2 backdrop-blur-sm bg-background/30"
+              className="w-6 h-10 md:w-8 md:h-12 rounded-full border-2 border-border/60 flex justify-center pt-1.5 md:pt-2 backdrop-blur-sm bg-background/30"
             >
-              <div className="w-1.5 h-3 rounded-full bg-primary"></div>
+              <div className="w-1 md:w-1.5 h-2.5 md:h-3 rounded-full bg-primary"></div>
             </motion.div>
           </motion.div>
         </section>
 
         {/* 3. The Problem */}
-        <section id="problem" className="py-32 relative">
+        <section id="problem" className="py-24 md:py-32 relative mt-8 md:mt-0">
           <div className="absolute inset-0 bg-muted/30 border-y border-border/40 skew-y-[-1deg] origin-top-left -z-10"></div>
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-20">
@@ -342,7 +339,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-extrabold mt-4 mb-6 tracking-tight">Most Salons Lose Revenue Without Realizing It.</h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-20">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20">
               <Card className="bg-background/60 backdrop-blur-lg border-border/50 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group">
                 <CardContent className="p-10 text-center">
                   <div className="text-6xl font-extrabold text-foreground mb-4 group-hover:scale-110 transition-transform">100</div>
@@ -729,15 +726,15 @@ export default function Home() {
         </section>
 
         {/* 9. Full Toolkit (Bento Grid) */}
-        <section className="py-32 bg-muted/30">
+        <section className="py-24 md:py-32 bg-muted/30 overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16 md:mb-20">
               <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs">The full toolkit</span>
               <h2 className="text-3xl md:text-5xl font-extrabold mt-4">Everything Needed To Run A Modern Salon.</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {[
+            {(() => {
+              const toolkitItems = [
                 { name: "Billing", desc: "Fast, accurate invoicing at the point of sale", icon: <Zap className="w-6 h-6" /> },
                 { name: "CRM", desc: "Rich customer profiles that power retention", icon: <Users className="w-6 h-6" /> },
                 { name: "Appointments", desc: "Seamless booking and schedule management", icon: <Calendar className="w-6 h-6" /> },
@@ -748,35 +745,99 @@ export default function Home() {
                 { name: "Reviews", desc: "Automated Google review collection at scale", icon: <Star className="w-6 h-6" /> },
                 { name: "Reports", desc: "Actionable insights into revenue and retention", icon: <BarChart className="w-6 h-6" /> },
                 { name: "Mobile App", desc: "Run your salon from anywhere, anytime", icon: <Smartphone className="w-6 h-6" /> }
-              ].map((tool, i) => (
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  key={i} 
-                  className="relative p-6 rounded-3xl overflow-hidden group bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 flex flex-col"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                  
-                  <div className="flex justify-between items-start mb-4 relative z-10">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center shadow-sm border border-border/50 group-hover:from-primary/20 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300 group-hover:scale-110">
-                      {tool.icon}
+              ];
+
+              return (
+                <>
+                  {/* Desktop View */}
+                  <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-6">
+                    {toolkitItems.map((tool, i) => (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        key={i} 
+                        className="relative p-6 rounded-3xl overflow-hidden group bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 flex flex-col min-h-[220px]"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                        
+                        <div className="flex justify-between items-start mb-4 relative z-10">
+                          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center shadow-sm border border-border/50 group-hover:from-primary/20 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300 group-hover:scale-110">
+                            {tool.icon}
+                          </div>
+                          <div className="text-2xl font-extrabold text-muted-foreground/30 font-serif group-hover:text-primary/30 transition-colors">
+                            {(i + 1).toString().padStart(2, '0')}
+                          </div>
+                        </div>
+                        
+                        <div className="relative z-10 mt-2 flex-1">
+                          <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                            {tool.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Mobile View */}
+                  <div className="md:hidden relative w-[100vw] left-1/2 -translate-x-1/2 flex flex-col gap-4 py-4">
+                    {/* Fade Edges */}
+                    <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none"></div>
+                    
+                    {/* Row 1 */}
+                    <div className="flex w-[max-content] animate-marquee hover:[animation-play-state:paused] gap-4 pl-4 pr-4">
+                      {[...toolkitItems.slice(0, 5), ...toolkitItems.slice(0, 5)].map((tool, i) => (
+                        <div 
+                          key={`row1-${i}`} 
+                          className="relative p-5 rounded-[2rem] w-[260px] overflow-hidden group bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col shrink-0"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                          <div className="flex justify-between items-start mb-3 relative z-10">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center shadow-sm border border-border/50 group-hover:text-primary transition-colors">
+                              {React.cloneElement(tool.icon as React.ReactElement, { className: "w-5 h-5" })}
+                            </div>
+                            <div className="text-xl font-extrabold text-muted-foreground/30 font-serif">
+                              {((i % 5) + 1).toString().padStart(2, '0')}
+                            </div>
+                          </div>
+                          <div className="relative z-10 mt-1 flex-1">
+                            <h3 className="font-bold text-base mb-1 text-foreground">{tool.name}</h3>
+                            <p className="text-sm text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <div className="text-2xl font-extrabold text-muted-foreground/30 font-serif group-hover:text-primary/30 transition-colors">
-                      {(i + 1).toString().padStart(2, '0')}
+
+                    {/* Row 2 */}
+                    <div className="flex w-[max-content] animate-marquee-reverse hover:[animation-play-state:paused] gap-4 pl-4 pr-4">
+                      {[...toolkitItems.slice(5, 10), ...toolkitItems.slice(5, 10)].map((tool, i) => (
+                        <div 
+                          key={`row2-${i}`} 
+                          className="relative p-5 rounded-[2rem] w-[260px] overflow-hidden group bg-white/50 backdrop-blur-xl border border-white hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col shrink-0"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                          <div className="flex justify-between items-start mb-3 relative z-10">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white to-muted text-foreground flex items-center justify-center shadow-sm border border-border/50 group-hover:text-primary transition-colors">
+                              {React.cloneElement(tool.icon as React.ReactElement, { className: "w-5 h-5" })}
+                            </div>
+                            <div className="text-xl font-extrabold text-muted-foreground/30 font-serif">
+                              {((i % 5) + 6).toString().padStart(2, '0')}
+                            </div>
+                          </div>
+                          <div className="relative z-10 mt-1 flex-1">
+                            <h3 className="font-bold text-base mb-1 text-foreground">{tool.name}</h3>
+                            <p className="text-sm text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  
-                  <div className="relative z-10 mt-2 flex-1">
-                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
-                      {tool.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{tool.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                </>
+              );
+            })()}
           </div>
         </section>
 
